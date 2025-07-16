@@ -4,6 +4,13 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      branch_to_build:
+        description: 'Branch to build from'
+        required: true
+        type: choice
+        options:
 jobs:
   test:
     timeout-minutes: 60
