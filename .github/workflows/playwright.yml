@@ -6,11 +6,11 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
     inputs:
-      branch_to_build:
-        description: 'Branch to build from'
-        required: true
-        type: choice
-        options:
+      my_input:
+        description: 'Please paste your input here'
+        required: true  # Or false, depending on your needs
+        type: string # 
+
 jobs:
   test:
     timeout-minutes: 60
