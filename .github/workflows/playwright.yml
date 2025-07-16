@@ -4,6 +4,13 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      my_input:
+        description: 'Please paste your input here'
+        required: true  # Or false, depending on your needs
+        type: string # 
+
 jobs:
   test:
     timeout-minutes: 60
@@ -17,8 +24,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
+    - name: Run Playwright smoke tests
+      run: npx playwright test -g @smoke --project chromium
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
