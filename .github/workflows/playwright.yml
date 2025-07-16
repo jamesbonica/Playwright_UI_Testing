@@ -5,13 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
-    inputs:
-      my_input:
-        description: 'Please paste your input here'
-        required: true  # Or false, depending on your needs
-        type: string # 
-
-jobs:
+ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
