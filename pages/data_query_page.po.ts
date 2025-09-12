@@ -9,6 +9,12 @@ export class DataQueryPage {
     readonly cat_submit_button: Locator;
     readonly page: Page
 
+
+    /**
+     * Creates an instance of DataQueryPage.
+     * @param {Page} page
+     * @memberof DataQueryPage
+     */
     constructor(page: Page) {
         this.page = page
         this.categories_select_field = this.page.getByText('Categories')
@@ -53,7 +59,6 @@ export class DataQueryPage {
         }
     }
 
-    // Click to reveal Categories dropdown
     async openCategoriesDropdown() {
 
         await this.categories_select_field.click();

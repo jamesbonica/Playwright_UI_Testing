@@ -19,11 +19,11 @@ test.describe('Data Matching Query Page', async () => {
             // click to reveal categories dropdown
             data_query_page.clickCategoriesSubmitButton()
 
-            // assert checkboxes are unselected
-            await expect(data_query_page.isIdChecked()).toBeFalsy()
-            await expect(data_query_page.isGeneralInfoChecked()).toBeFalsy()
-            await expect(data_query_page.isContactInfoChecked()).toBeFalsy()
-            await expect(data_query_page.isContactInfoChecked()).toBeFalsy()
+            // assert checkboxes are unselected, custom error messages added
+            await expect(data_query_page.isIdChecked(), 'The Id is checked be default!!').toBeFalsy()
+            await expect(data_query_page.isGeneralInfoChecked(), 'The General Info is checked be default!!').toBeFalsy()
+            await expect(data_query_page.isPersonalInfoChecked(), 'The Personal Info is checked be default!!').toBeFalsy()
+            await expect(data_query_page.isContactInfoChecked(), 'The Contact Info is checked be default!!').toBeFalsy()
 
     })
 
